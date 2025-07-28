@@ -14,7 +14,7 @@ export default function Bg() {
                     throw new Error("Network response was not ok");
                 }
                 const data = await response.json();
-                setBgImage(data.urls.regular);
+                setBgImage(data.urls.full);
             } catch (error) {
                 console.error("Error fetching background image:", error);
             }
@@ -32,7 +32,7 @@ export default function Bg() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            color: "white",
+            color: "green",
              }}>
                 <h1> UNA CITA UN CAFÉ UNA MANZANA</h1>
         </div>
