@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Quotes.css";
-import quotes from "./quotes.json";
+import quotes from "../../../assets/data/quotes.json";
 
 const Quotes = () => {
     const [randomQuote, setRandomQuote] = React.useState(null);
