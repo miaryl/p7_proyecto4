@@ -1,0 +1,25 @@
+.quotes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quote-card {
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #258d97;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.quote-author {
+  font-weight: bold;
+  color: #555;
+}
