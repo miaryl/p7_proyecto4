@@ -1,4 +1,5 @@
 import { use, useEffect, useState } from "react";
+import "./Bg.css";
 
 export default function Bg() {
     const [bgImage, setBgImage] = useState("");
@@ -25,16 +26,8 @@ export default function Bg() {
         <div className="bg"
         style ={{ 
             backgroundImage: `url(${bgImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100vh",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "green",
-             }}>
-                <h1> UNA CITA UN CAFÉ UNA MANZANA</h1>
+                       }}>
+              
         </div>
     );
             
