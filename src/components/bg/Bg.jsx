@@ -1,4 +1,5 @@
 import { use, useEffect, useState } from "react";
+import "./Bg.css"; 
 import "./Bg.css";
 
 export default function Bg() {
@@ -15,13 +16,14 @@ export default function Bg() {
                     throw new Error("Network response was not ok");
                 }
                 const data = await response.json();
-                setBgImage(data.urls.full);
+                setBgImage(data.urls.regular);
             } catch (error) {
                 console.error("Error fetching background image:", error);
             }
         };
         fetchBgImage();
         }, [accessKey]);
+
     return (
         <div className="bg"
         style ={{ 
