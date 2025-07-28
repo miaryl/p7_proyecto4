@@ -1,0 +1,668 @@
+const colors = [
+  {
+    "name": "Riviera",
+    "primary_color": "#FF8B8B",
+    "secondary_color": "#9C2525",
+    "text_color": "#F9F8E6"
+  },
+  {
+    "name": "Swan Dive",
+    "primary_color": "#F9F7E8",
+    "secondary_color": "#62BFAD",
+    "text_color": ""
+  },
+  {
+    "name": "Radio Silence",
+    "primary_color": "#61BFAD",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Corrupted Monk",
+    "primary_color": "#E54B4B",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Mr. Business",
+    "primary_color": "#167C80",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Brave Stranger",
+    "primary_color": "#B7E3E4",
+    "secondary_color": "#F03F35",
+    "text_color": ""
+  },
+  {
+    "name": "Wes Sanderson",
+    "primary_color": "#EFE8D8",
+    "secondary_color": "#FF4552",
+    "text_color": ""
+  },
+  {
+    "name": "Le Carnaval",
+    "primary_color": "#005397",
+    "secondary_color": "#FF8788",
+    "text_color": ""
+  },
+  {
+    "name": "Plant Matter",
+    "primary_color": "#32B67A",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Rabbit Dreams",
+    "primary_color": "#FBCBC1",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#000000"
+  },
+  {
+    "name": "Laundry Service",
+    "primary_color": "#F3C9DD",
+    "secondary_color": "#72AEC5",
+    "text_color": ""
+  },
+  {
+    "name": "Favorite Bodega",
+    "primary_color": "#0BBCD6",
+    "secondary_color": "#E6625E",
+    "text_color": ""
+  },
+  {
+    "name": "Thirsty Lilac",
+    "primary_color": "#BFB5D7",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Nightingale",
+    "primary_color": "#BEA1A5",
+    "secondary_color": "#2D1FE8",
+    "text_color": "#000000"
+  },
+  {
+    "name": "Golden Afternoon",
+    "primary_color": "#F0CF61",
+    "secondary_color": "#EBE8E1",
+    "text_color": ""
+  },
+  {
+    "name": "Wingwoman",
+    "primary_color": "#0E38B1",
+    "secondary_color": "#FFFFFF",
+    "text_color": ""
+  },
+  {
+    "name": "Brain Waves",
+    "primary_color": "#A6CFE2",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#0B0C11"
+  },
+  {
+    "name": "The Sanctuary",
+    "primary_color": "#371722",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#BBAB9B"
+  },
+  {
+    "name": "Ghosted",
+    "primary_color": "#C7C6C4",
+    "secondary_color": "#008E8F",
+    "text_color": ""
+  },
+  {
+    "name": "Melted Shake",
+    "primary_color": "#DABAAF",
+    "secondary_color": "#0B0C11",
+    "text_color": "#CF2F89"
+  },
+  {
+    "name": "Earnest Proposal",
+    "primary_color": "#283470",
+    "secondary_color": "#15A29C",
+    "text_color": ""
+  },
+  {
+    "name": "Swift Kiss",
+    "primary_color": "#EF3E4A",
+    "secondary_color": "#FEDAC2",
+    "text_color": "#B0D8DC"
+  },
+  {
+    "name": "Old Diary",
+    "primary_color": "#C0C2CE",
+    "secondary_color": "#012F63",
+    "text_color": "#FE667B"
+  },
+  {
+    "name": "Penny Candy",
+    "primary_color": "#EEC0DB",
+    "secondary_color": "#162BF4",
+    "text_color": ""
+  },
+  {
+    "name": "Chivalrous Fox",
+    "primary_color": "#B6CAC0",
+    "secondary_color": "#C02A1B",
+    "text_color": ""
+  },
+  {
+    "name": "Billiards Room",
+    "primary_color": "#C5BEAA",
+    "secondary_color": "#B32A48",
+    "text_color": "#28356A"
+  },
+  {
+    "name": "Cruller Intentions",
+    "primary_color": "#FDF06F",
+    "secondary_color": "#D31B33",
+    "text_color": ""
+  },
+  {
+    "name": "Gentle Giant",
+    "primary_color": "#EDB5BD",
+    "secondary_color": "#000000",
+    "text_color": "#BEDFD4"
+  },
+  {
+    "name": "Drunk on Easter",
+    "primary_color": "#17C37B",
+    "secondary_color": "#F4F4F4",
+    "text_color": ""
+  },
+  {
+    "name": "Packed Lunch",
+    "primary_color": "#F1C3B8",
+    "secondary_color": "#19227D",
+    "text_color": ""
+  },
+  {
+    "name": "Dante's Daydream",
+    "primary_color": "#1B1D1C",
+    "secondary_color": "#EA1821",
+    "text_color": ""
+  },
+  {
+    "name": "Bite Your Tongue",
+    "primary_color": "#E88565",
+    "secondary_color": "#181A27",
+    "text_color": ""
+  },
+  {
+    "name": "Fresh Baguette",
+    "primary_color": "#FFEFE5",
+    "secondary_color": "#1FC8A9",
+    "text_color": ""
+  },
+  {
+    "name": "Righted Wrong",
+    "primary_color": "#F4C7EE",
+    "secondary_color": "#008FD3",
+    "text_color": ""
+  },
+  {
+    "name": "No Dice",
+    "primary_color": "#77EEDF",
+    "secondary_color": "#28292B",
+    "text_color": ""
+  },
+  {
+    "name": "Precious Ego",
+    "primary_color": "#E57066",
+    "secondary_color": "#28292B",
+    "text_color": ""
+  },
+  {
+    "name": "Open Book",
+    "primary_color": "#EED974",
+    "secondary_color": "#28292B",
+    "text_color": ""
+  },
+  {
+    "name": "Fat Wallet",
+    "primary_color": "#FBFE56",
+    "secondary_color": "#0B64C0",
+    "text_color": ""
+  },
+  {
+    "name": "Jam Jar",
+    "primary_color": "#A7BBC3",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#C886A2"
+  },
+  {
+    "name": "Dad's Old Wallet",
+    "primary_color": "#3B465C",
+    "secondary_color": "#E9E8D4",
+    "text_color": ""
+  },
+  {
+    "name": "Monastery Morning",
+    "primary_color": "#055A5B",
+    "secondary_color": "#E6E6E6",
+    "text_color": ""
+  },
+  {
+    "name": "Torn Tutu",
+    "primary_color": "#9C9CDD",
+    "secondary_color": "#CAE9BF",
+    "text_color": "#F9BDBD"
+  },
+  {
+    "name": "Faded Letter",
+    "primary_color": "#D3E8E1",
+    "secondary_color": "#78A15D",
+    "text_color": "#E44A66"
+  },
+  {
+    "name": "Mama's New Bag",
+    "primary_color": "#CBA0AA",
+    "secondary_color": "#5A3C20",
+    "text_color": "#FAE397"
+  },
+  {
+    "name": "Late Homework",
+    "primary_color": "#178E96",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#FDE3C8"
+  },
+  {
+    "name": "Spring Awakening",
+    "primary_color": "#20AD65",
+    "secondary_color": "#FEC8BE",
+    "text_color": ""
+  },
+  {
+    "name": "Our Little Secret",
+    "primary_color": "#E75153",
+    "secondary_color": "#58B89D",
+    "text_color": "#4F3A4B"
+  },
+  {
+    "name": "Dinner Party",
+    "primary_color": "#4F3A4B",
+    "secondary_color": "#E75152",
+    "text_color": ""
+  },
+  {
+    "name": "Cozy Sweater",
+    "primary_color": "#112378",
+    "secondary_color": "#FBECCF",
+    "text_color": ""
+  },
+  {
+    "name": "Pleasant Journey",
+    "primary_color": "#E33946",
+    "secondary_color": "#FDEDB2",
+    "text_color": ""
+  },
+  {
+    "name": "Peach Fuzz",
+    "primary_color": "#FEDCCC",
+    "secondary_color": "#F87C4C",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Dessert Island",
+    "primary_color": "#00B28B",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#EDC3C7"
+  },
+  {
+    "name": "Late Gift",
+    "primary_color": "#9357A9",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#000000"
+  },
+  {
+    "name": "Faux Paw",
+    "primary_color": "#C6D7C7",
+    "secondary_color": "#C98A6B",
+    "text_color": "#FF5035"
+  },
+  {
+    "name": "Bad Banker",
+    "primary_color": "#12162D",
+    "secondary_color": "#8B743D",
+    "text_color": ""
+  },
+  {
+    "name": "Bedtime Story",
+    "primary_color": "#BEF6E9",
+    "secondary_color": "#4B5C68",
+    "text_color": "#BB828B"
+  },
+  {
+    "name": "Twisted Ribbon",
+    "primary_color": "#776EA7",
+    "secondary_color": "#BDC6FF",
+    "text_color": "#EBB9D4"
+  },
+  {
+    "name": "Dear Reader",
+    "primary_color": "#EAEAEA",
+    "secondary_color": "#BF8351",
+    "text_color": "#ABCEE2"
+  },
+  {
+    "name": "And So On",
+    "primary_color": "#EF303B",
+    "secondary_color": "#481C19",
+    "text_color": ""
+  },
+  {
+    "name": "Major Elle",
+    "primary_color": "#1812D6",
+    "secondary_color": "#000018",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Awkward Penpal",
+    "primary_color": "#FFFDE7",
+    "secondary_color": "#EC0B19",
+    "text_color": "#189BA3"
+  },
+  {
+    "name": "Inside Joke",
+    "primary_color": "#F1D3D3",
+    "secondary_color": "#000000",
+    "text_color": "#1539CF"
+  },
+  {
+    "name": "Small Gamble",
+    "primary_color": "#D1E9E3",
+    "secondary_color": "#334A45",
+    "text_color": "#F3BFA9"
+  },
+  {
+    "name": "Lunch Money",
+    "primary_color": "#7DE0E6",
+    "secondary_color": "#FF2A93",
+    "text_color": ""
+  },
+  {
+    "name": "Over the Hill",
+    "primary_color": "#3B755F",
+    "secondary_color": "#000000",
+    "text_color": "#F2CB6C"
+  },
+  {
+    "name": "Skinny Dipped",
+    "primary_color": "#CE7182",
+    "secondary_color": "#85CEBA",
+    "text_color": "#FAEED4"
+  },
+  {
+    "name": "Second Cousin",
+    "primary_color": "#340B0B",
+    "secondary_color": "#9B8FFF",
+    "text_color": ""
+  },
+  {
+    "name": "Switched Twins",
+    "primary_color": "#F8EBEE",
+    "secondary_color": "#0C3934",
+    "text_color": ""
+  },
+  {
+    "name": "Abandoned Playground",
+    "primary_color": "#FF9966",
+    "secondary_color": "#FFD2DD",
+    "text_color": "#8C5F31"
+  },
+  {
+    "name": "Milo's Big Day",
+    "primary_color": "#3333FF",
+    "secondary_color": "#CDFFCC",
+    "text_color": ""
+  },
+  {
+    "name": "Block Party",
+    "primary_color": "#75FFC0",
+    "secondary_color": "#7A30CF",
+    "text_color": ""
+  },
+  {
+    "name": "Fool's Errand",
+    "primary_color": "#FB9B2A",
+    "secondary_color": "#0C00FF",
+    "text_color": ""
+  },
+  {
+    "name": "Vienna Stroll",
+    "primary_color": "#FF8FA4",
+    "secondary_color": "#E5E8DC",
+    "text_color": ""
+  },
+  {
+    "name": "Endless Circle",
+    "primary_color": "#000000",
+    "secondary_color": "#FF0000",
+    "text_color": ""
+  },
+  {
+    "name": "Open Sea",
+    "primary_color": "#083EA7",
+    "secondary_color": "#1FDE91",
+    "text_color": ""
+  },
+  {
+    "name": "Harmless Fling",
+    "primary_color": "#674B7C",
+    "secondary_color": "#DD705C",
+    "text_color": "#E5E8DC"
+  },
+  {
+    "name": "Young Jung",
+    "primary_color": "#19AAD1",
+    "secondary_color": "#FFCC4C",
+    "text_color": ""
+  },
+  {
+    "name": "Previous Engagement",
+    "primary_color": "#B1FDEB",
+    "secondary_color": "#6B7C95",
+    "text_color": "#000000"
+  },
+  {
+    "name": "Lucid Dream",
+    "primary_color": "#121738",
+    "secondary_color": "#D17C78",
+    "text_color": ""
+  },
+  {
+    "name": "First Edition",
+    "primary_color": "#0C485E",
+    "secondary_color": "#FEB904",
+    "text_color": ""
+  },
+  {
+    "name": "Castle Rock",
+    "primary_color": "#FFE6AD",
+    "secondary_color": "#FF4B24",
+    "text_color": "#9A008A"
+  },
+  {
+    "name": "kühles Blondes",
+    "primary_color": "#022EAC",
+    "secondary_color": "#13E19B",
+    "text_color": "#FBA30C"
+  },
+  {
+    "name": "Excelsior!",
+    "primary_color": "#F94627",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#9A008A"
+  },
+  {
+    "name": "Hidden Garden",
+    "primary_color": "#9AB79A",
+    "secondary_color": "#094436",
+    "text_color": "#D1E1CB"
+  },
+  {
+    "name": "The Cathedral",
+    "primary_color": "#424E22",
+    "secondary_color": "#FFAD67",
+    "text_color": ""
+  },
+  {
+    "name": "Exhalation",
+    "primary_color": "#C73E99",
+    "secondary_color": "#F8DA1B",
+    "text_color": ""
+  },
+  {
+    "name": "In the Vines",
+    "primary_color": "#5C457B",
+    "secondary_color": "#FF7D39",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Diamond Day",
+    "primary_color": "#FF6090",
+    "secondary_color": "#81072C",
+    "text_color": "#FEEA0D"
+  },
+  {
+    "name": "Shipwreck",
+    "primary_color": "#0D4CBE",
+    "secondary_color": "#CFCEC7",
+    "text_color": ""
+  },
+  {
+    "name": "Rosebud",
+    "primary_color": "#501718",
+    "secondary_color": "#FD750A",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Lost Time",
+    "primary_color": "#E7E7E7",
+    "secondary_color": "#DA9F18",
+    "text_color": "#766C08"
+  },
+  {
+    "name": "Robed Witness",
+    "primary_color": "#8AA9C6",
+    "secondary_color": "#093929",
+    "text_color": ""
+  },
+  {
+    "name": "Deep Pond",
+    "primary_color": "#B3E0E0",
+    "secondary_color": "#000000",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Climb the Terrace",
+    "primary_color": "#343B3F",
+    "secondary_color": "#FF89B5",
+    "text_color": "#D1BDFF"
+  },
+  {
+    "name": "Mirage",
+    "primary_color": "#CDB670",
+    "secondary_color": "#FFFFFF",
+    "text_color": "#000000"
+  },
+  {
+    "name": "Solar Flare",
+    "primary_color": "#F8DA1B",
+    "secondary_color": "#9A008A",
+    "text_color": "#7B76A6"
+  },
+  {
+    "name": "Daytrip",
+    "primary_color": "#F83439",
+    "secondary_color": "#9BC6E3",
+    "text_color": "#321913"
+  },
+  {
+    "name": "Deep Breath",
+    "primary_color": "#EEE9DC",
+    "secondary_color": "#E2818A",
+    "text_color": ""
+  },
+  {
+    "name": "Crystal Palace",
+    "primary_color": "#E2A9C9",
+    "secondary_color": "#000000",
+    "text_color": "#FC411E"
+  },
+  {
+    "name": "Stardust",
+    "primary_color": "#0A005A",
+    "secondary_color": "#F0F0F0",
+    "text_color": "#FCA59B"
+  },
+  {
+    "name": "Broken Spaceship",
+    "primary_color": "#CDCDD0",
+    "secondary_color": "#F74A1F",
+    "text_color": ""
+  },
+  {
+    "name": "Overgrown",
+    "primary_color": "#F7F7F7",
+    "secondary_color": "#26CB4D",
+    "text_color": ""
+  },
+  {
+    "name": "Hidden Passage",
+    "primary_color": "#2D1C46",
+    "secondary_color": "#B6D5F4",
+    "text_color": "#EC2326"
+  },
+  {
+    "name": "Tamed Beast",
+    "primary_color": "#053161",
+    "secondary_color": "#FF6A34",
+    "text_color": "#BED9DA"
+  },
+  {
+    "name": "Golden Hour",
+    "primary_color": "#FDB90B",
+    "secondary_color": "#FB5408",
+    "text_color": "#8CAECC"
+  },
+  {
+    "name": "The Cottage",
+    "primary_color": "#837663",
+    "secondary_color": "#101C4E",
+    "text_color": "#FFD3C2"
+  },
+  {
+    "name": "Tangled Web",
+    "primary_color": "#B2B2B2",
+    "secondary_color": "#000000",
+    "text_color": "#FFFFFF"
+  },
+  {
+    "name": "Old World",
+    "primary_color": "#91A8CF",
+    "secondary_color": "#FFFBFB",
+    "text_color": "#3E4668"
+  },
+  {
+    "name": "Paradiso",
+    "primary_color": "#F2F2F2",
+    "secondary_color": "#000000",
+    "text_color": "#0B64FE"
+  },
+  {
+    "name": "Fallen Petals",
+    "primary_color": "#F2DDBC",
+    "secondary_color": "#FF67B9",
+    "text_color": "#FAAD58"
+  },
+  {
+    "name": "Bloodsmoke",
+    "primary_color": "#FF8B8B",
+    "secondary_color": "#9C2525",
+    "text_color": ""
+  }
+];
