@@ -1,19 +1,22 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Bg from './components/bg/Bg.jsx'
-import './index.css'
-
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    
-  </StrictMode>,
-)
+import './App.css'
+import ShowQuote from './components/quotes/Quotes.jsx'
+import Navbar from './components/navbar/NavBar.jsx'
+import AddQuote from './components/button/Button.jsx'
 
 function App() {
+
   return (
-    <div>
-      <Bg />
-    </div>
-  );
+    <>
+    <Navbar />
+      <h1>MOTIVA TU DÍA</h1>
+    <ShowQuote />
+    <AddQuote />
+         
+    </>
+  )
 }
+
+export default App
+
