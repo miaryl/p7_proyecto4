@@ -32,61 +32,36 @@ function Form () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!text.trim ()) return;
         
-        const newQuote = {
-            text: text.trim(),
-            author: author.trim() || "Anónimo",
+       
     
-    };
-    if (editingIndex !== null) {
-        const updatedQuotes = quotes.map((q, i) => ( i === editingIndex ? newQuote : q));
-        updateStorage(updatedQuotes);   
-        setEditingIndex(null);
-    } else {
-        updateStorage([...quotes, newQuote]);
-    }
-        setText("");
-        setAuthor("");
-    };
-    const handleEdit = (index) => {
-        setEditingIndex(index);
-        setText(quotes[index].text);
-        setAuthor(quotes[index].author === "Anónimo" ? "" : quotes[index].author);
-    };   
-    const handleDelete = (index) => {
-        const updatedQuotes = quotes.filter((_, i) => i !== index);
-        updateStorage(updatedQuotes);
-        if (editingIndex === index) {
-            setEditingIndex(null);
-            setText("");
-            setAuthor("");
-        }
-    };
    
-
+}
     
     return (
-        <form onSubmit={handleSubmit} className="quote-form">
+        <>
+        <p className="mt-[500px]">Añade aquí tu frase</p>
+        <form onSubmit={handleSubmit} 
+        className="quote-form flex flex-col gap-4 w-full max-w-md">
         <input
             type="text"
-            placeholder="Enter your quote"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            className="quote-input"
+            placeholder="Frase:"
+            value={quote}
+            onChange={(e) => setQuote(e.target.value)}
+            className="quote-input border rounded bg-white py-[50px] mb-9"
             required
         />
         <input
             type="text"
-            placeholder="Enter the author's name"
+            placeholder="Autor:"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            className="author-input"
+            className="author-input border rounded bg-white p-2 mb-9"
         />
-        <button type="submit" className="submit-button">
-          {editingIndex !== null ? "Guardar cambios" : "Agregar cita"}
-        </button>
+        <button type="submit" 
+        className="rounded bg-white font-bold py-2 px-4 cursor-pointer hover:bg-gray-400">Añadir frase</button>
         </form>
+        </>
     );
 }
 
