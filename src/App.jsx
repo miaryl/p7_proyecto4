@@ -7,6 +7,7 @@ import Form from './components/form/form.jsx'
 import ShowQuote from './components/quotes/Quotes.jsx'
 
 
+
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
     <section id="misfavoritas" className="scroll-mt-32 mt-40 flex flex-col items-center gap-4">
         <h2 className="text-xl font-bold">Mis Frases Favoritas</h2>
         <p>Aquí van tus frases!</p>
+        
     </section>
   </>
   )
