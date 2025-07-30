@@ -80,6 +80,7 @@ function Form () {
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-10 mb-8">
   ¡Dale forma a tu inspiración!
 </h2>
+ Updated upstream
         <form onSubmit={handleSubmit} 
         className="quote-form flex flex-col gap-4 w-full max-w-md">
         <input
@@ -100,7 +101,34 @@ function Form () {
         <button type="submit" 
         className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-14">Guardar frase</button>
         </form>
-        
+ <form
+  onSubmit={handleSubmit}
+  className="quote-form flex flex-col gap-4 w-full max-w-md mx-auto px-4"
+>
+  <input
+    type="text"
+    placeholder="Frase:"
+    value={text}
+    onChange={(e) => setText(e.target.value)}
+    className="quote-input border rounded bg-white py-[50px] mb-9 pl-2 text-base sm:text-lg"
+    required
+  />
+  <input
+    type="text"
+    placeholder="Autor:"
+    value={author}
+    onChange={(e) => setAuthor(e.target.value)}
+    className="author-input border rounded bg-white p-2 mb-9 text-base sm:text-lg"
+  />
+  <button
+    type="submit"
+    className="w-full sm:w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-14"
+  >
+    Guardar frase
+  </button>
+</form>
+
+ Stashed changes
         </>
     );
 }
