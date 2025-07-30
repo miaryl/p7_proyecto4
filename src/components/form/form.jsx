@@ -72,7 +72,7 @@ function Form () {
     
     return (
         <>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-10 mb-8">
   ¡Dale forma a tu inspiración!
 </h2>
         <form onSubmit={handleSubmit} 
@@ -93,7 +93,7 @@ function Form () {
             className="author-input border rounded bg-white p-2 mb-9"
         />
         <button type="submit" 
-        className="rounded bg-white font-bold py-5 px-4 cursor-pointer hover:bg-gray-400">Guardar</button>
+        className="rounded bg-white font-bold py-5 px-4 cursor-pointer hover:bg-gray-400 mb-14">Guardar</button>
         </form>
         </>
     );
