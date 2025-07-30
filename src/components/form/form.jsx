@@ -77,7 +77,7 @@ function Form () {
     
     return (
         <>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-10 mb-8">
   ¡Dale forma a tu inspiración!
 </h2>
         <form onSubmit={handleSubmit} 
@@ -98,7 +98,7 @@ function Form () {
             className="author-input border rounded bg-white p-2 mb-9"
         />
         <button type="submit" 
-        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-7">Guardar frase</button>
+        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-7 mb-14">Guardar frase</button>
         </form>
         
         </>

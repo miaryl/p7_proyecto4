@@ -1,8 +1,8 @@
 
-function AddQuote ({onAdd}) {
+function AddQuote () {
     return (
         
-<button onClick={onAdd} className="
+<a href="#añadir" className="
   rounded-md
   border
   border-transparent
@@ -17,8 +17,9 @@ function AddQuote ({onAdd}) {
   hover:border-black 
   hover:bg-blue-100
   hover:scale-120
+  mb-40
 ">Crea tu frase
-</button>
+</a>
     )
 
 }
