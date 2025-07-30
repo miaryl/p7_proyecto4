@@ -77,15 +77,9 @@ function Form () {
     
     return (
         <>
-        <p className="mt-[500px]">Añade aquí tu frase</p>
-
-       {/* -> puede usar al modal 
-       {alertMessage &&(
-            <div>
-                {alertMessage}
-            </div>
-        )}
-        */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8">
+  ¡Dale forma a tu inspiración!
+</h2>
         <form onSubmit={handleSubmit} 
         className="quote-form flex flex-col gap-4 w-full max-w-md">
         <input
@@ -104,7 +98,7 @@ function Form () {
             className="author-input border rounded bg-white p-2 mb-9"
         />
         <button type="submit" 
-        className="rounded bg-white font-bold  cursor-pointer hover:bg-gray-200 mb-7 px-8 py-5">Guardar frase</button>
+        className="rounded bg-white font-bold py-5 px-4 cursor-pointer hover:bg-gray-400">Guardar</button>
         </form>
         
         </>
