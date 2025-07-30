@@ -1,50 +1,78 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import "./form.css";
 
 function Form () {
-    const [quote, setQuote] = useState("");
+    const [quotes, setQuotes] = useState([]);
+    const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
     const [randomQuote, setRandomQuote] = useState(null);
     const [editingIndex, setEditingIndex] = useState(null);
 
     useEffect(() => {
         const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
-        setQuote(storedQuotes);
+        setQuotes(storedQuotes);
         setRandomFrom(storedQuotes);
  } 
     , []);
+
     const setRandomFrom = (quotes) => {
         if (quotes.length > 0) {            
-            const randomIndex = quotes[Math.floor(Math.random() * quotes.length)];
-            setRandomQuote(randomIndex);
+            const random = quotes[Math.floor(Math.random() * quotes.length)];
+            setRandomQuote(random);
         } else {
-            setRandomQuote(null);}
+            setRandomQuote(null);
+        }
         };
-        
+
+    const updateStorage = (updatedQuotes) => {
+        localStorage.setItem("quotes", JSON.stringify(updatedQuotes));
+        setQuotes(updatedQuotes);
+        setRandomFrom(updatedQuotes);
+    };    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (quote && author) {
-        console.log(`Quote: ${quote}, Author: ${author}`);
-        setQuote("");
-        setAuthor("");
         if (!text.trim ()) return;
-        const newQuote = text.trim();
-        const newAuthor = author.trim() || "Anónimo"
-      
         
-    };
+        const newQuote = {
+            text: text.trim(),
+            author: author.trim() || "Anónimo",
     
+    };
+    if (editingIndex !== null) {
+        const updatedQuotes = quotes.map((q, i) => ( i === editingIndex ? newQuote : q));
+        updateStorage(updatedQuotes);   
+        setEditingIndex(null);
+    } else {
+        updateStorage([...quotes, newQuote]);
+    }
+        setText("");
+        setAuthor("");
+    };
+    const handleEdit = (index) => {
+        setEditingIndex(index);
+        setText(quotes[index].text);
+        setAuthor(quotes[index].author === "Anónimo" ? "" : quotes[index].author);
+    };   
+    const handleDelete = (index) => {
+        const updatedQuotes = quotes.filter((_, i) => i !== index);
+        updateStorage(updatedQuotes);
+        if (editingIndex === index) {
+            setEditingIndex(null);
+            setText("");
+            setAuthor("");
+        }
+    };
    
-}
+
     
     return (
         <form onSubmit={handleSubmit} className="quote-form">
         <input
             type="text"
             placeholder="Enter your quote"
-            value={quote}
-            onChange={(e) => setQuote(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             className="quote-input"
             required
         />
@@ -55,9 +83,11 @@ function Form () {
             onChange={(e) => setAuthor(e.target.value)}
             className="author-input"
         />
-        <button type="submit" className="submit-button">Add Quote</button>
+        <button type="submit" className="submit-button">
+          {editingIndex !== null ? "Guardar cambios" : "Agregar cita"}
+        </button>
         </form>
     );
 }
+
 export default Form;
-export { Form };
