@@ -7,6 +7,7 @@ function Form () {
     const [author, setAuthor] = useState("");
     const [randomQuote, setRandomQuote] = useState(null);
     const [editingIndex, setEditingIndex] = useState(null);
+    const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
         const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
@@ -46,13 +47,17 @@ function Form () {
             updatedQuotes[editingIndex] = newQuote;
             updateStorage(updatedQuotes);
             setEditingIndex(null);
+            alert("Frase editada correctamente");
         } else {
             const updatedQuotes = [...quotes, newQuote];
             updateStorage(updatedQuotes);
+            alert("Frase guardada correctamente");
         }
         
        setText("");
        setAuthor("");
+
+       
     };
 
     /*const handleEdit = (index) => {
@@ -73,6 +78,14 @@ function Form () {
     return (
         <>
         <p className="mt-[500px]">Añade aquí tu frase</p>
+
+       {/* -> puede usar al modal 
+       {alertMessage &&(
+            <div>
+                {alertMessage}
+            </div>
+        )}
+        */}
         <form onSubmit={handleSubmit} 
         className="quote-form flex flex-col gap-4 w-full max-w-md">
         <input
@@ -80,7 +93,7 @@ function Form () {
             placeholder="Frase:"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="quote-input border rounded bg-white py-[50px] mb-9"
+            className="quote-input border rounded bg-white py-[50px] mb-9 pl-2"
             required
         />
         <input
@@ -90,9 +103,10 @@ function Form () {
             onChange={(e) => setAuthor(e.target.value)}
             className="author-input border rounded bg-white p-2 mb-9"
         />
-        <button type="submit" 
-        className="rounded bg-white font-bold py-2 px-4 cursor-pointer hover:bg-gray-400">Añadir frase</button>
+        
         </form>
+        <button type="submit" 
+        className="rounded bg-white font-bold  cursor-pointer hover:bg-gray-200 mb-7 px-8 py-5">Guardar frase</button>
         </>
     );
 }
