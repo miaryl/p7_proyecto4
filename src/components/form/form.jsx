@@ -32,11 +32,43 @@ function Form () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!text.trim()) {
+            alert("Por favor, añade una frase.");
+            return;
+        }   
+        const newQuote = {
+            text: text.trim(),
+            author: author.trim() || "Anónimo",
+        };
+
+        if (editingIndex !== null) {
+            const updatedQuotes = [...quotes];
+            updatedQuotes[editingIndex] = newQuote;
+            updateStorage(updatedQuotes);
+            setEditingIndex(null);
+        } else {
+            const updatedQuotes = [...quotes, newQuote];
+            updateStorage(updatedQuotes);
+        }
         
-       
+       setText("");
+       setAuthor("");
+    };
+
+    /*const handleEdit = (index) => {
+        const quoteToEdit = quotes[index];
+        setText(quoteToEdit.text);
+        setAuthor(quoteToEdit.author);
+        setEditingIndex(index);
+    };
+    const handleDelete = (index) => {
+        const updatedQuotes = quotes.filter((_, i) => i !== index);
+        updateStorage(updatedQuotes);
+        setEditingIndex(null);
+    };*/
     
    
-}
+
     
     return (
         <>
@@ -46,8 +78,8 @@ function Form () {
         <input
             type="text"
             placeholder="Frase:"
-            value={quote}
-            onChange={(e) => setQuote(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             className="quote-input border rounded bg-white py-[50px] mb-9"
             required
         />
