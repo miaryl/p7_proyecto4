@@ -7,6 +7,7 @@ function Form () {
     const [author, setAuthor] = useState("");
     const [randomQuote, setRandomQuote] = useState(null);
     const [editingIndex, setEditingIndex] = useState(null);
+    const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
         const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
@@ -46,13 +47,17 @@ function Form () {
             updatedQuotes[editingIndex] = newQuote;
             updateStorage(updatedQuotes);
             setEditingIndex(null);
+            alert("Frase editada correctamente");
         } else {
             const updatedQuotes = [...quotes, newQuote];
             updateStorage(updatedQuotes);
+            alert("Frase guardada correctamente");
         }
         
        setText("");
        setAuthor("");
+
+       
     };
 
     /*const handleEdit = (index) => {
@@ -82,7 +87,7 @@ function Form () {
             placeholder="Frase:"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="quote-input border rounded bg-white py-[50px] mb-9"
+            className="quote-input border rounded bg-white py-[50px] mb-9 pl-2"
             required
         />
         <input
@@ -93,8 +98,9 @@ function Form () {
             className="author-input border rounded bg-white p-2 mb-9"
         />
         <button type="submit" 
-        className="rounded bg-white font-bold py-5 px-4 cursor-pointer hover:bg-gray-400">Guardar</button>
+        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-7">Guardar frase</button>
         </form>
+        
         </>
     );
 }
