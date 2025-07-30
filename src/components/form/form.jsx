@@ -72,7 +72,7 @@ function Form () {
     
     return (
         <>
-        <p className="mt-[500px]">Añade aquí tu frase</p>
+        <p>Añade aquí tu frase</p>
         <form onSubmit={handleSubmit} 
         className="quote-form flex flex-col gap-4 w-full max-w-md">
         <input

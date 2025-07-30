@@ -11,16 +11,22 @@ function App() {
 
   return (
     <>
-    <header>  <Navbar /> </header>
-    <main className='mt-60 md:mt-30 lg:mt-60 flex flex-col items-center gap-4 min-w-[280px] sm:min-w-[320px]'>
+    <header> <Navbar /> </header>
+   <section id="inicio" className="scroll-mt-32 mt-60 flex flex-col items-center gap-4">
       <h1 className='text-center text-6xl font-bold mb-8'> MOTIVA TU DÍA</h1>
       <ShowQuote />
-    
-    <AddQuote />
-    <Form />
-    </main>
-         
-    </>
+      <AddQuote />
+    </section>
+
+    <section id="añadir" className="scroll-mt-32 mt-40 flex flex-col items-center gap-4">
+      <Form />
+    </section>
+
+    <section id="misfavoritas" className="scroll-mt-32 mt-40 flex flex-col items-center gap-4">
+        <h2 className="text-xl font-bold">Mis Frases Favoritas</h2>
+        <p>Aquí van tus frases!</p>
+    </section>
+  </>
   )
 }
 
