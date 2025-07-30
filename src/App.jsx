@@ -5,6 +5,7 @@ import Navbar from './components/navbar/NavBar.jsx'
 import AddQuote from './components/button/Button.jsx'
 import Form from './components/form/form.jsx'
 import ShowQuote from './components/quotes/Quotes.jsx'
+import Bg from './components/bg/Bg.jsx'
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
   </h1>
   <ShowQuote />
   <AddQuote />
+  <Bg />
+
+
 </section>
 
 

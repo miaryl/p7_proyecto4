@@ -1,0 +1,32 @@
+.bg-container {
+   align-self: flex-end;
+   padding-right: 2rem;
+   margin-top: -14rem;
+}
+
+.planet-img {
+  width: 200px;
+  animation: latido 1.5s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .bg-container {
+    margin-top: -7rem;
+  }
+
+  .planet-img {
+    width: 150px; 
+  }
+}
