@@ -98,7 +98,7 @@ function Form () {
             className="author-input border rounded bg-white p-2 mb-9"
         />
         <button type="submit" 
-        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-7 mb-14">Guardar frase</button>
+        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-14">Guardar frase</button>
         </form>
         
         </>
