@@ -12,13 +12,15 @@ function App() {
   return (
     <>
     <header> <Navbar /> </header>
-   <section id="inicio" className="scroll-mt-32 mt-60 flex flex-col items-center gap-4">
-      <h1 className='text-center text-6xl font-bold mb-8'> MOTIVA TU DÍA</h1>
+    <section id="inicio" className="scroll-mt-25 mt-40 flex flex-col items-center gap-4">
+  <h1 className="text-center text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-7xl font-bold mb-25 mt-25">
+    MOTIVA TU DÍA
+  </h1>
       <ShowQuote />
       <AddQuote />
     </section>
 
-    <section id="añadir" className="scroll-mt-32 mt-40 flex flex-col items-center gap-4">
+    <section id="añadir" className="scroll-mt-32 mt-50 flex flex-col items-center gap-4">
       <Form />
     </section>
 

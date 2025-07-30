@@ -17,7 +17,7 @@ function AddQuote ({onAdd}) {
   hover:border-black 
   hover:bg-blue-100
   hover:scale-120
-">Añadir
+">Crea tu frase
 </button>
     )
 
