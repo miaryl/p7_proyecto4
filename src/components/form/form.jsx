@@ -103,10 +103,10 @@ function Form () {
             onChange={(e) => setAuthor(e.target.value)}
             className="author-input border rounded bg-white p-2 mb-9"
         />
-        
-        </form>
         <button type="submit" 
-        className="rounded bg-white font-bold  cursor-pointer hover:bg-gray-200 mb-7 px-8 py-5">Guardar frase</button>
+        className="w-auto self-center rounded bg-white font-bold cursor-pointer hover:bg-gray-200 px-4 py-5 mb-7">Guardar frase</button>
+        </form>
+        
         </>
     );
 }
