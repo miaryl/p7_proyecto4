@@ -12,7 +12,8 @@ function App() {
     <>
     <header>  <Navbar /> </header>
     <main className='mt-60 md:mt-30 lg:mt-60 flex flex-col items-center gap-4 min-w-[280px] sm:min-w-[320px]'>
-      <h1 className='text-center text-4xl font-bold mb-8'> MOTIVA TU DÍA</h1>
+      <h1 className='text-center text-6xl font-bold mb-8'> MOTIVA TU DÍA</h1>
+    <ShowQuote />
     <AddQuote />
     <Form />
     </main>
