@@ -6,12 +6,14 @@ import AddQuote from './components/button/Button.jsx'
 import Form from './components/form/form.jsx'
 import ShowQuote from './components/quotes/Quotes.jsx'
 import Bg from './components/bg/Bg.jsx'
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
 
   return (
     <>
+    <Toaster position="top-center" reverseOrder={false} />
     <header> <Navbar /> </header>
     <section 
   id="inicio" 
