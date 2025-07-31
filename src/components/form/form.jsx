@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./form.css";
 
 function Form () {
     const [quotes, setQuotes] = useState([]);
