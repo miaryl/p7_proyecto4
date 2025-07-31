@@ -1,6 +1,15 @@
 # :dizzy:MOTIVA TU DÍA 
-Motívate Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu propia página para mostrar tus Frases Motivadoras Favoritas.
+Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu propia página para mostrar tus Frases Motivadoras Favoritas.
 ¡Puedes crear, editar, leer y también eliminar frases con total libertad! 
+
+## Proceso de Desarrollo
+
+- Metodología ágil: **Scrum** y **Kanban**
+- Trabajo en un solo **Sprint**
+- Reuniones **Daily** todos los días
+- **Retrospectiva** al final del Sprint
+- Uso de **GitFlow** para control de versiones
+- Basado en un diseño seleccionado previamente en **Figma**, adaptado a nuevos requisitos dinámicos
 
 ##  :computer:Tecnologías
 - `HTML5`
@@ -13,6 +22,22 @@ Motívate Tu Día es una Aplicación de Página Única (SPA) donde puedes tener 
 - **Visual Studio Code** – Desarrollo  
 - **Trello** – Gestión ágil de tareas  
 - **Git / GitHub** – Control de versiones
+
+  
+## Cómo iniciar el proyecto localmente
+
+> Solo necesitas un navegador moderno y un editor como VS Code.
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/miaryl/p7_proyecto4.git
+   ```
+
+2. Abre la carpeta en Visual Studio Code.
+
+3. Usa la extensión Live Server (o similar) para abrir el archivo `index.html`.
+
+4. ¡Listo! Empieza a explorar la web!
 
 ## :woman_technologist:Equipo
 - :nerd_face: [Ana Aguilera](https://github.com/AnaAguileraMorales88)
