@@ -31,11 +31,6 @@ function App() {
     <section id="añadir" className="scroll-mt-25 flex flex-col items-center gap-4 bg-[#A4CCD9]">
       <Form />
     </section>
-
-    <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
-        <h2 className="text-xl font-bold mt-10">Mis Frases Favoritas</h2>
-        <p>Aquí van tus frases!</p>
-    </section>
     </>
   )
 }

@@ -14,10 +14,7 @@ function Navbar () {
     <a href="#añadir" className="font-bold text-black hover:text-gray-500 transition duration-200 hover:scale-105">
       Añadir Frase
     </a>
-    <a href="#misfavoritas" className="font-bold text-black hover:text-gray-500 transition duration-200 hover:scale-105">
-      Mis Favoritas
-    </a>
-  </nav>
+   </nav>
 </header>
 
     );
