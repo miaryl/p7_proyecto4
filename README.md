@@ -5,7 +5,7 @@ Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu
 ## Proceso de Desarrollo
 
 - Metodología ágil: **Scrum** y **Kanban**
-- Trabajo en un solo **Sprint**
+- Trabajo em dos **Sprints**
 - Reuniones **Daily** todos los días
 - **Retrospectiva** al final del Sprint
 - Uso de **GitFlow** para control de versiones
@@ -35,7 +35,7 @@ Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu
 
 2. Abre la carpeta en Visual Studio Code.
 
-3. Usa la extensión Live Server (o similar) para abrir el archivo `index.html`.
+3. Usa npm run dev para abrir un live server y visualizar la página.
 
 4. ¡Listo! Empieza a explorar la web!
 
