@@ -7,6 +7,7 @@ function Form () {
     const [randomQuote, setRandomQuote] = useState(null);
     const [editingIndex, setEditingIndex] = useState(null);
     const [alertMessage, setAlertMessage] = useState("");
+    const [error, setError] = useState("");
 
     useEffect(() => {
         const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
@@ -32,9 +33,11 @@ function Form () {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!text.trim()) {
-            alert("Por favor, añade una frase.");
+            setError("Por favor, añade una frase.");
             return;
-        }   
+        }  
+        setError("");
+
         const newQuote = {
             text: text.trim(),
             author: author.trim() || "Anónimo",
@@ -67,17 +70,19 @@ function Form () {
     onSubmit={handleSubmit}
     className="quote-form flex flex-col gap-4 w-full max-w-md mx-auto"
   >
-    <input
+    <label htmlFor="frase">Frase:</label><input
       type="text"
-      placeholder="Frase:"
+      id="frase"
+      placeholder="Escribe tu frase aquí..."
       value={text}
       onChange={(e) => setText(e.target.value)}
-      className="quote-input border rounded bg-white py-[50px] mb-9 pl-2 text-base sm:text-lg"
-      required
+      className="quote-input border rounded bg-white py-[50px]  pl-2 text-base sm:text-lg"
     />
-    <input
+    {error && <p className="text-red-500 font-bold text-sm mb-4 ml-1">{error}</p>}
+
+    <label htmlFor="author">Autor:</label><input
       type="text"
-      placeholder="Autor:"
+      id="author"
       value={author}
       onChange={(e) => setAuthor(e.target.value)}
       className="author-input border rounded bg-white p-2 mb-9 text-base sm:text-lg"

@@ -1,15 +1,2 @@
-:root {
-font-family:'Ligconsolata', monospace;
-background-color: #8DBCC7;
-color: #000;
-font-size: 18px;
-}
+@import "tailwindcss";
 
-
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #8DBCC7;
-   color: #000;
-  }
- 
-}
