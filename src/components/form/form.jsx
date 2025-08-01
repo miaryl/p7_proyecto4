@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from 'react-hot-toast';
 
 function Form () {
     const [quotes, setQuotes] = useState([]);
@@ -33,7 +34,7 @@ function Form () {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!text.trim()) {
-            setError("Por favor, añade una frase.");
+            alert("Por favor, añade una frase.");
             return;
         }  
         setError("");
@@ -52,7 +53,7 @@ function Form () {
         } else {
             const updatedQuotes = [...quotes, newQuote];
             updateStorage(updatedQuotes);
-            alert("Frase guardada correctamente");
+            toast.success("Frase guardada correctamente");
         }
         
        setText("");
