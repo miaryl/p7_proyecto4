@@ -39,6 +39,25 @@ Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu
 
 4. ¡Listo! Empieza a explorar la web!
 
+## :art: Tailwind CSS
+Este proyecto utiliza <strong>Tailwind CSS</strong> para los estilos.
+ ### Versión 
+  Versión de Tailwind CSS : ```v4.1.11```
+ ### Cómo usar
+  Puedes usar las clases utilitarias de Tailwind directamente en archivos HTML o JSX.
+  <br>
+  Ejemplo:<br>
+  html: ```<button class="bg-blue-500 text-white px-4 py-2 rounded">Haz clic</button>``` <br>
+  jsx: ```<button className="bg-blue-500 text-white px-4 py-2 rounded">Click me</button>```
+
+## :pencil: Pruebas Unitarias (Vitest)
+Este proyecto utiliza <strong>Vitest</strong> para realizar pruebas unitarias.
+ ### Versión 
+  Versión de Vitest: ```V3.2.4```
+ ### Cómo ejecutar las pruebas
+  Para ejectar las pruebas unitarias:
+   ```npm run test```
+
 ## :woman_technologist:Equipo
 - :nerd_face: [Ana Aguilera](https://github.com/AnaAguileraMorales88)
      Product Owner y Desarrolladora Web
