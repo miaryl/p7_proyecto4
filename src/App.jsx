@@ -8,7 +8,7 @@ import ShowQuote from './components/quotes/Quotes.jsx'
 import Bg from './components/bg/Bg.jsx'
 import { useEffect, useState } from "react"
 import QuoteList from './components/quotes/QuoteList.jsx'
-import { Toaster } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 function App() {
@@ -86,21 +86,15 @@ MOTIVA TU DÍA</h1>
 </section>
 
 <section id="añadir" className="scroll-mt-25 flex flex-col items-center gap-4 bg-[#A4CCD9]">
-<Form quotes={quotes} setQuotes={setQuotes}/>
+<Form
+text={text}
+author={author}
+setText={setText}
+setAuthor={setAuthor}
+handleSubmit={handleSubmit}
+error={error}
+/>
 </section>
-      <section
-        id="añadir"
-        className="scroll-mt-25 flex flex-col items-center gap-4 bg-[#A4CCD9]"
-      >
-        <Form
-          text={text}
-          author={author}
-          setText={setText}
-          setAuthor={setAuthor}
-          handleSubmit={handleSubmit}
-          error={error}
-        />
-      </section>
 
 <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
 <h2 className="text-xl font-bold mt-10">Mis Frases Favoritas</h2>
