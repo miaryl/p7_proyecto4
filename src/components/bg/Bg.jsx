@@ -4,13 +4,15 @@ import './bg.css';
 
 function Bg() {
   return (
-    <div className="self-end pr-8 relative -top-[14rem] sm:-top-[7rem]">
-      <img
-        src={miImagen}
-        alt="Planeta girando"
-        className="w-[200px] sm:w-[150px] animate-latido"
-      />
-    </div>
+<div className="relative pr-8 self-end -top-[7rem] sm:-top-[14rem] flex justify-center sm:justify-end">
+  <img
+    src={miImagen}
+    alt="Planeta girando"
+    className="w-[150px] sm:w-[200px] animate-latido"
+  />
+</div>
+
+
   );
 }
 

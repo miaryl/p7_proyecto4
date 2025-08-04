@@ -15,23 +15,20 @@ function App() {
     <>
     <Toaster position="top-center" reverseOrder={false} />
     <header> <Navbar /> </header>
-    <section 
+    <section
   id="inicio" 
-  className="scroll-mt-6 flex flex-col items-center justify-center gap-1 bg-[#8DBCC7] mt-6 min-h-screen"
+  className="scroll-mt-25 flex flex-col items-center justify-center gap-1 bg-[#8DBCC7] mt-25 min-h-screen"
   >
-  <h1 className="text-center text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-7xl font-bold mb-15 mt-15">
-    MOTIVA TU DÍA
+  <h1 className="text-center text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-7xl font-bold mb-25 mt-15">
+  MOTIVA TU DÍA
   </h1>
   <ShowQuote />
   <AddQuote />
   <Bg />
-
-
 </section>
 
-
-    <section id="añadir" className="scroll-mt-25 flex flex-col items-center gap-4 bg-[#A4CCD9]">
-      <Form />
+<section id="añadir" className="scroll-mt-25 flex flex-col items-center gap-4 bg-[#A4CCD9]">
+<Form />
     </section>
 
     <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
