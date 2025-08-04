@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { vi } from 'vitest'; 
-import Form from './form'; 
+import { vi } from 'vitest';
+import Form from './form';
 
 describe('QuoteForm', () => {
   test('permite escribir frase y autor y llama a handleSubmit', () => {
