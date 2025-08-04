@@ -96,10 +96,8 @@ function Form () {
     </button>
   </form>
 </section>
-
-
-        </>
-    );
+</>
+);
 }
 
 export default Form;
