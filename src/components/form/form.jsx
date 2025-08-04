@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
-import toast from 'react-hot-toast';
 
-function Form () {
-    const [quotes, setQuotes] = useState([]);
-    const [text, setText] = useState("");
-    const [author, setAuthor] = useState("");
-    const [randomQuote, setRandomQuote] = useState(null);
-    const [editingIndex, setEditingIndex] = useState(null);
+function Form ({text, author, setText, setAuthor, handleSubmit, error}) {
+ /*   
     const [alertMessage, setAlertMessage] = useState("");
-    const [error, setError] = useState("");
+    
+    const [randomQuote, setRandomQuote] = useState(null);
 
-    useEffect(() => {
-        const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
-        setQuotes(storedQuotes);
-        setRandomFrom(storedQuotes);
-    }, []);
-
+   
+/*
     const setRandomFrom = (quotes) => {
         if (quotes.length > 0) {            
             const random = quotes[Math.floor(Math.random() * quotes.length)];
@@ -59,7 +50,7 @@ function Form () {
        setText("");
        setAuthor("");
     };
-
+*/
     return (
         <>
 <section className="h-screen flex flex-col justify-center items-center px-4">
