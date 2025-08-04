@@ -33,7 +33,7 @@ const [quotes, setQuotes] = useQuotes();
 </section>
 
 <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4  bg-[#C4E1E6]">
-<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-25 mt-20">Mis Frases Favoritas</h2>
+<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-15 mt-20">Mis Frases Favoritas</h2>
 <QuoteList quotes={quotes} />
 </section>
      <Footer />
