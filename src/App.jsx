@@ -9,6 +9,7 @@ import Bg from './components/bg/Bg.jsx'
 import { useEffect, useState } from "react"
 import QuoteList from './components/quotes/QuoteList.jsx'
 import { Toaster, toast } from 'react-hot-toast';
+import Footer from './components/footer.jsx' 
 
 
 function App() {
@@ -100,6 +101,7 @@ error={error}
 <h2 className="text-xl font-bold mt-10">Mis Frases Favoritas</h2>
 <QuoteList quotes={quotes} />
 </section>
+  <Footer />
 </>
 )
 }
