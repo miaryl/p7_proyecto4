@@ -13,21 +13,31 @@ function Navbar() {
             ☰
           </button>
           <ul
-            className={`absolute top right-40 w-48 flex whitespace-nowrap space-x-6 md:flex-row md:static md:w-auto md:space-x-6 text-sm md:text-base md:bg-transparent transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden md:flex"}
+            className={`absolute top right-20 w-48 flex whitespace-nowrap space-x-6 md:flex-row md:static md:w-auto md:space-x-6 text-sm md:text-base md:bg-transparent transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden md:flex"}
             `}
           >
             {["inicio", "añadir", "misfavoritas"].map((id) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className="block font-bold text-black hover:text-gray-500 transition duration-200 hover:scale-105 py-2 text-right"
+                  className="block font-bold hover:text-gray-500 transition duration-200 hover:scale-105 whitespace-nowrap"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {id === "añadir"
-                    ? "Añadir Frase"
-                    : id === "misfavoritas"
-                      ? "Mis Favoritas"
-                      : "Inicio"}
+                  <span className="block sm:hidden">
+                    {id === "añadir"
+                      ? "Añadir"
+                      : id === "misfavoritas"
+                        ? "Favoritas"
+                        : "Início"}
+                  </span>
+
+                  <span className="hidden sm:block">
+                    {id === "añadir"
+                      ? "Añadir Frase"
+                      : id === "misfavoritas"
+                        ? "Mis Favoritas"
+                        : "Inicio"}
+                  </span>
                 </a>
               </li>
             ))}
