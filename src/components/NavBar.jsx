@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -6,7 +7,10 @@ function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 shadow-md bg-[#6896a0ff]">
-        <nav className="flex justify-end items-center p-5 mx-4 relative">
+        <nav className="flex justify-between items-center p-5 mx-4 relative">
+            <a href="#inicio">
+              <img src={logo} alt="Logo" className="w-[100px] h-auto" />
+            </a>
           <button className="text-white text-3xl md:hidden cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           >
