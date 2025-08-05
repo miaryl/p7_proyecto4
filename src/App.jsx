@@ -36,58 +36,58 @@ function App() {
     }
 
 
-      const newQuote = {
-        text: text.trim(),
-        author: author.trim() || "Anónimo",
-        editing: false
-      };
-
-      const updatedQuotes = [...quotes, newQuote];
-      updateStorage(updatedQuotes);
-      
-      setText("");
-      setAuthor("");
-      setError("");
-      toast.success("Frase guardada correctamente");
-
-      const goToMisFrases = document.getElementById("misfavoritas");
-
-      if(goToMisFrases){
-        goToMisFrases.scrollIntoView({behavior:"smooth"});
-      }
+    const newQuote = {
+      text: text.trim(),
+      author: author.trim() || "Anónimo",
+      editing: false
     };
 
-    
-    const toggleEdit = (index) =>{
-      const updatedQuotes = quotes.map((quote, i )=>
-      i === index ? {...quote, editing: !quote.editing} : quote
+    const updatedQuotes = [...quotes, newQuote];
+    updateStorage(updatedQuotes);
+
+    setText("");
+    setAuthor("");
+    setError("");
+    toast.success("Frase guardada correctamente");
+
+    const goToMisFrases = document.getElementById("misfavoritas");
+
+    if (goToMisFrases) {
+      goToMisFrases.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
+  const toggleEdit = (index) => {
+    const updatedQuotes = quotes.map((quote, i) =>
+      i === index ? { ...quote, editing: !quote.editing } : quote
     );
     setQuotes(updatedQuotes);
-    };
+  };
 
-    const handleEdit = (index, field, value)=>{
-      const updatedQuotes = [...quotes];
+  const handleEdit = (index, field, value) => {
+    const updatedQuotes = [...quotes];
 
-      updatedQuotes[index][field] = value;
-      setQuotes(updatedQuotes);
-    };
+    updatedQuotes[index][field] = value;
+    setQuotes(updatedQuotes);
+  };
 
-    const saveEdit = (index)=>{
-      const updatedQuotes = [...quotes];
+  const saveEdit = (index) => {
+    const updatedQuotes = [...quotes];
 
-      if(!updatedQuotes[index].author.trim()){
-        updatedQuotes[index].author = 'Anónimo';
-      }
-      updatedQuotes[index].editing = false;
-      updateStorage(updatedQuotes);
-      toast.success("Frase editada");
+    if (!updatedQuotes[index].author.trim()) {
+      updatedQuotes[index].author = 'Anónimo';
     }
+    updatedQuotes[index].editing = false;
+    updateStorage(updatedQuotes);
+    toast.success("Frase editada");
+  }
 
-    const handleDelete = (index) => {
-      const updatedQuotes = quotes.filter((_, i) => i !== index);
-      updateStorage(updatedQuotes);
-      toast.success("Frase eliminada");
-    };
+  const handleDelete = (index) => {
+    const updatedQuotes = quotes.filter((_, i) => i !== index);
+    updateStorage(updatedQuotes);
+    toast.success("Frase eliminada");
+  };
 
   return (
     <>
@@ -114,14 +114,14 @@ function App() {
       </section>
 
       <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
-        <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-5xl lg:text-6xl font-bold">Mis Frases Favoritas</h2>
-        <QuoteList 
-  quotes={quotes}
-  onEdit={toggleEdit}
-  onDelete={handleDelete}
-  onChange={handleEdit}
-  onSave={saveEdit}
-  />
+        <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-4xl lg:text-4xl font-bold">Mis Frases<br className="block sm:hidden" /> Favoritas</h2>
+        <QuoteList
+          quotes={quotes}
+          onEdit={toggleEdit}
+          onDelete={handleDelete}
+          onChange={handleEdit}
+          onSave={saveEdit}
+        />
       </section>
       <Footer />
     </>
