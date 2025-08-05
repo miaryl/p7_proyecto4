@@ -49,6 +49,12 @@ function App() {
       setAuthor("");
       setError("");
       toast.success("Frase guardada correctamente");
+
+      const goToMisFrases = document.getElementById("misfavoritas");
+
+      if(goToMisFrases){
+        goToMisFrases.scrollIntoView({behavior:"smooth"});
+      }
     };
 
     
@@ -108,7 +114,7 @@ function App() {
       </section>
 
       <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
-        <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-5xl lg:text-6xl font-bold text-center">Mis Frases Favoritas</h2>
+        <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-5xl lg:text-6xl font-bold">Mis Frases Favoritas</h2>
         <QuoteList 
   quotes={quotes}
   onEdit={toggleEdit}
