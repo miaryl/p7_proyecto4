@@ -1,55 +1,6 @@
 
 function Form({ text, author, setText, setAuthor, handleSubmit, error }) {
-  /*   
- const [alertMessage, setAlertMessage] = useState("");
-     
- const [randomQuote, setRandomQuote] = useState(null);
  
-    
- /*const setRandomFrom = (quotes) => {
- if (quotes.length > 0) {            
- const random = quotes[Math.floor(Math.random() * quotes.length)];
- setRandomQuote(random);
- } else {
- setRandomQuote(null);
- }
- };
- 
- const updateStorage = (updatedQuotes) => {
- localStorage.setItem("quotes", JSON.stringify(updatedQuotes));
- setQuotes(updatedQuotes);
- setRandomFrom(updatedQuotes);
- };    
- 
- const handleSubmit = (e) => {
- e.preventDefault();
- if (!text.trim()) {
- alert("Por favor, añade una frase.");
- return;
- }  
- setError("");
- 
- const newQuote = {
-  text: text.trim(),
-  author: author.trim() || "Anónimo",
- };
- 
- if (editingIndex !== null) {
-  const updatedQuotes = [...quotes];
-  updatedQuotes[editingIndex] = newQuote;
-  updateStorage(updatedQuotes);
-  setEditingIndex(null);
-   alert("Frase editada correctamente");
- } else {
-   const updatedQuotes = [...quotes, newQuote];
-   updateStorage(updatedQuotes);
-   toast.success("Frase guardada correctamente");
- }
- setText("");
- setAuthor("");
- };
- */
-
   return (
     <>
       <section className="h-screen flex flex-col justify-center items-center px-4">
@@ -59,7 +10,8 @@ function Form({ text, author, setText, setAuthor, handleSubmit, error }) {
           onSubmit={handleSubmit}
           className="quote-form flex flex-col gap-4 w-full max-w-md mx-auto"
         >
-          <label htmlFor="frase">Frase:</label><input
+          <label htmlFor="frase">Frase:</label>
+    <input
             type="text"
             id="frase"
             placeholder="Escribe tu frase aquí..."
@@ -69,7 +21,8 @@ function Form({ text, author, setText, setAuthor, handleSubmit, error }) {
           />
           {error && <p className="text-red-500 font-bold text-sm mb-4 ml-1">{error}</p>}
 
-          <label htmlFor="author">Autor:</label><input
+          <label htmlFor="author">Autor:</label>
+    <input
             type="text"
             id="author"
             value={author}

@@ -17,7 +17,6 @@ function App() {
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
   const [error, setError] = useState("");
-  const [editingIndex, setEditingIndex] = useState(null);
 
   useEffect(() => {
     const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
@@ -36,41 +35,53 @@ function App() {
       return;
     }
 
-    setError("");
 
-    const newQuote = {
-      text: text.trim(),
-      author: author.trim() || "Anónimo",
-    };
+      const newQuote = {
+        text: text.trim(),
+        author: author.trim() || "Anónimo",
+        editing: false
+      };
 
-    if (editingIndex !== null) {
-      const updatedQuotes = [...quotes];
-      updatedQuotes[editingIndex] = newQuote;
-      updateStorage(updatedQuotes);
-      setEditingIndex(null);
-      toast.success("Frase editada correctamente");
-    } else {
       const updatedQuotes = [...quotes, newQuote];
       updateStorage(updatedQuotes);
+      
+      setText("");
+      setAuthor("");
+      setError("");
       toast.success("Frase guardada correctamente");
+    };
+
+    
+    const toggleEdit = (index) =>{
+      const updatedQuotes = quotes.map((quote, i )=>
+      i === index ? {...quote, editing: !quote.editing} : quote
+    );
+    setQuotes(updatedQuotes);
+    };
+
+    const handleEdit = (index, field, value)=>{
+      const updatedQuotes = [...quotes];
+
+      updatedQuotes[index][field] = value;
+      setQuotes(updatedQuotes);
+    };
+
+    const saveEdit = (index)=>{
+      const updatedQuotes = [...quotes];
+
+      if(!updatedQuotes[index].author.trim()){
+        updatedQuotes[index].author = 'Anónimo';
+      }
+      updatedQuotes[index].editing = false;
+      updateStorage(updatedQuotes);
+      toast.success("Frase editada");
     }
 
-    setText("");
-    setAuthor("");
-  };
-
-  /*
-  const addQuote = (newQuote) => {
-  setQuotes(prev => [...prev], {...newQuote, id: crypto.randomUUID()});
-  };
-  */
-  const delateQuote = (id) => {
-    setQuotes(prev => [...prev, filter(quotes => quotes.id === id)]);
-  };
-
-  const updateQuote = (updatedquote) => {
-    setTasks(prev => prev.map(quotes => quotes.id === updatedquote.id ? updatedquote : quotes));
-  };
+    const handleDelete = (index) => {
+      const updatedQuotes = quotes.filter((_, i) => i !== index);
+      updateStorage(updatedQuotes);
+      toast.success("Frase eliminada");
+    };
 
   return (
     <>
@@ -98,7 +109,13 @@ function App() {
 
       <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
         <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-5xl lg:text-6xl font-bold text-center">Mis Frases Favoritas</h2>
-        <QuoteList quotes={[...quotes].reverse()} />
+        <QuoteList 
+  quotes={[...quotes].reverse()}
+  onEdit={toggleEdit}
+  onDelete={handleDelete}
+  onChange={handleEdit}
+  onSave={saveEdit}
+  />
       </section>
       <Footer />
     </>
