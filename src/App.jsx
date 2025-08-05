@@ -114,7 +114,7 @@ function App() {
       </section>
 
       <section id="misfavoritas" className="scroll-mt-32 flex flex-col items-center gap-4 bg-[#C4E1E6]">
-        <h2 className="text-center text-3xl sm:text-3xl mt-20 md:text-4xl lg:text-4xl font-bold">Mis Frases<br className="block sm:hidden" /> Favoritas</h2>
+        <h2 className="text-center text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-7xl font-bold mb-10 mt-20">Mis Frases<br className="block sm:hidden" /> Favoritas</h2>
         <QuoteList
           quotes={quotes}
           onEdit={toggleEdit}
