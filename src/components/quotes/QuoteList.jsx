@@ -1,3 +1,4 @@
+import { RiEdit2Fill, RiDeleteBin6Line } from 'react-icons/ri';
 
 
 function QuoteList({quotes, onEdit, onDelete, onChange, onSave}) {
@@ -29,12 +30,26 @@ function QuoteList({quotes, onEdit, onDelete, onChange, onSave}) {
 
           ):(
             <>
-              <p className="text-lg font-semibold">"{quote.text}"</p>
-                        <p className="text-sm text-right text-gray-600 mt-2">– {quote.author}</p>
-                      <div>
-                <button onClick={()=> onEdit(index)}>Editar</button>
-                <button onClick={()=>onDelete(index)}>Eliminar</button>
+            
+              <div className="flex justify-end space-x-2">
+                <button
+                  onClick={() => onEdit(index)}
+                  className="p-2 rounded hover:bg-gray-200 text-black-600"
+                  aria-label="Editar"
+                  title="Editar">
+                  <RiEdit2Fill size={20} />
+                </button>
+
+                <button
+                  onClick={() => onDelete(index)}
+                  className="p-2 rounded hover:bg-gray-200 text-black-600"
+                  aria-label="Eliminar"
+                  title="Eliminar">
+                  <RiDeleteBin6Line size={20} />
+                </button>
               </div>
+              <p className="text-lg font-semibold">"{quote.text}"</p>
+              <p className="text-sm text-right text-gray-600 mt-2">– {quote.author}</p>
             
             </>
           )}
