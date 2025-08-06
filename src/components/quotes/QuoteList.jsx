@@ -11,7 +11,7 @@ function QuoteList({ quotes, onEdit, onDelete, onChange, onSave }) {
   }
 
   return (
-    <ul className="max-w-xxl w-full px-6 py-6 sm:px-20 py-6 space-y-4 mt-10 mb-10">
+    <ul className="max-w-xxl w-full px-6 py-6 sm:px-20 space-y-4 mt-10 mb-10">
       {[...quotes].reverse().map((quote, i) => {
         const index = quotes.length - 1 - i;
         return (
