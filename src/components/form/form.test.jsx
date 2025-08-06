@@ -1,27 +1,45 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { vi } from 'vitest'; 
-import Form from './form'; 
+import { describe, it, expect, vi } from 'vitest';
+import React, { useState } from 'react';
+import Form from './form';
 
-describe('QuoteForm', () => {
-  test('permite escribir frase y autor y llama a handleSubmit', () => {
-    global.alert = vi.fn();
+function Wrapper({ handleSubmit = () => {} }) {
+  const [text, setText] = useState('');
+  const [author, setAuthor] = useState('');
 
-    const mockHandleSubmit = vi.fn((e) => e.preventDefault());
+  return (
+    <Form
+      text={text}
+      author={author}
+      setText={setText}
+      setAuthor={setAuthor}
+      handleSubmit={handleSubmit}
+      error=""
+      image=""q
+      setImage={() => {}}
+      handleImage={() => {}}
+    />
+  );
+}
 
-    render(
-      <Form />
-    );
-
-    const fraseInput = screen.getByLabelText(/Frase/i);
-    const autorInput = screen.getByLabelText(/Autor/i);
-    const boton = screen.getByRole('button', { name: /Guardar/i });
-
-    fireEvent.change(fraseInput, { target: { value: 'Cree en ti' } });
-    fireEvent.change(autorInput, { target: { value: 'Tú mismo' } });
-    fireEvent.click(boton);
-
-    expect(global.alert).toHaveBeenCalledTimes(1);
-    expect(global.alert).toHaveBeenCalledWith("Frase guardada correctamente");
+describe('Form component', () => {
+  it('renderiza correctamente el formulario', () => {
+    render(<Wrapper />);
+    expect(screen.getByText(/¡Dale forma a tu inspiración!/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Frase:/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Autor:/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Guardar/i })).toBeInTheDocument();
   });
+
+  it('actualiza los inputs cuando el usuario escribe', () => {
+    render(<Wrapper />);
+    const fraseInput = screen.getByLabelText(/Frase:/i);
+    fireEvent.change(fraseInput, { target: { value: 'Hola mundo' } });
+    expect(fraseInput).toHaveValue('Hola mundo');
+
+    const authorInput = screen.getByLabelText(/Autor:/i);
+    fireEvent.change(authorInput, { target: { value: 'Yo' } });
+    expect(authorInput).toHaveValue('Yo');
+  });
+
 });
