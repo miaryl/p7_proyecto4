@@ -15,7 +15,24 @@ function QuoteList({ quotes, onEdit, onDelete, onChange, onSave }) {
       {[...quotes].reverse().map((quote, i) => {
         const index = quotes.length - 1 - i;
         return (
-          <li key={index} className="bg-white p-8 rounded shadow">
+          <li key={index} className="relative bg-white p-4 rounded shadow"
+           style={
+            quote.image
+            
+             ? {
+              backgroundImage: `url(${quote.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+             } :{}
+             
+           }
+           
+          >
+            {quote.image && (
+            <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/60 to-transparent z-0"></div>
+          )
+            }
+            <div className="relative z-10 p-4">
             {quote.editing ? (
               <>
                 <div className="flex flex-wrap items-center gap-2 w-full">
@@ -58,9 +75,10 @@ function QuoteList({ quotes, onEdit, onDelete, onChange, onSave }) {
                   </button>
                 </div>
                 <p className="text-lg font-semibold">"{quote.text}"</p>
-                <p className="text-sm text-right text-gray-600 mt-2">– {quote.author}</p>
+                <p className="text-sm text-right text-black mt-2">– {quote.author}</p>
               </>
             )}
+            </div>
           </li>
         );
       })}

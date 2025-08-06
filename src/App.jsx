@@ -17,7 +17,8 @@ function App() {
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
   const [error, setError] = useState("");
-
+  const [image, setImage] = useState(null);
+ 
   useEffect(() => {
     const storedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
     setQuotes(storedQuotes);
@@ -39,6 +40,7 @@ function App() {
     const newQuote = {
       text: text.trim(),
       author: author.trim() || "Anónimo",
+      image: image || null,
       editing: false
     };
 
@@ -47,7 +49,12 @@ function App() {
 
     setText("");
     setAuthor("");
+    setImage(null);
     setError("");
+
+    e.target.reset();
+
+
     toast.success("Frase guardada correctamente");
 
     const goToMisFrases = document.getElementById("misfavoritas");
@@ -57,7 +64,7 @@ function App() {
     }
   };
 
-
+  
   const toggleEdit = (index) => {
     const updatedQuotes = quotes.map((quote, i) =>
       i === index ? { ...quote, editing: !quote.editing } : quote
@@ -89,6 +96,18 @@ function App() {
     toast.success("Frase eliminada");
   };
 
+  const handleImage = (e)=>{
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = ()=>{
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
@@ -110,6 +129,9 @@ function App() {
           setAuthor={setAuthor}
           handleSubmit={handleSubmit}
           error={error}
+          image={image}
+          setImage={setImage}
+          handleImage={handleImage}
         />
       </section>
 
