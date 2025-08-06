@@ -17,9 +17,7 @@ function Navbar() {
             ☰
           </button>
           <ul
-            className={`absolute top right-20 w-39 sm:w-48 flex whitespace-nowrap space-x-6 md:flex-row md:static md:w-auto md:space-x-6 text-sm md:text-base md:bg-transparent transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden md:flex"}
-            `}
-          >
+                  className={`absolute top right-20 w-39 sm:w-48 flex whitespace-nowrap space-x-4 md:flex-row md:static md:w-auto md:space-x-10 text-sm md:text-base md:bg-transparent transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden md:flex"}`} >
             {["inicio", "añadir", "misfavoritas"].map((id) => (
               <li key={id}>
                 <a
