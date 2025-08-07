@@ -1,5 +1,5 @@
-# :dizzy:MOTIVA TU DÍA 
-Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu propia página para mostrar tus Frases Motivadoras Favoritas.
+# :dizzy:Motivario
+Motivario es una Aplicación de Página Única (SPA) donde puedes tener tu propia página para mostrar tus Frases Motivadoras Favoritas.
 ¡Puedes crear, editar, leer y también eliminar frases con total libertad! 
 
 ## 📷 Capturas del Proyecto
@@ -79,4 +79,5 @@ Este proyecto utiliza <strong>Vitest</strong> para realizar pruebas unitarias.
      Desarrolladora
 -  :nerd_face: [Suraya Souto](https://github.com/surayac)
      Desarrolladora
+
 
