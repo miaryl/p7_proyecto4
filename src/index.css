@@ -1,15 +1,14 @@
 :root {
-font-family:'Ligconsolata', monospace;
-background-color: #8DBCC7;
-color: #000;
-font-size: 18px;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
+    font-family:'Ligconsolata', monospace;
     background-color: #8DBCC7;
-   color: #000;
-  }
- 
-}
+    color: #000;
+    font-size: 18px;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      :root {
+        background-color: #8DBCC7;
+        color: #000;
+      }
+     
+    }

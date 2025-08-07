@@ -1,8 +1,9 @@
 
-function AddQuote () {
-    return (
-        
-<a href="#añadir" className="
+function AddQuote() {
+
+  return (
+
+    <a href="#añadir" className="
   rounded-md
   border
   border-transparent
@@ -19,9 +20,8 @@ function AddQuote () {
   hover:scale-120
   mb-40
 ">Crea tu frase
-</a>
-    )
-
+    </a>
+  )
 }
 
 export default AddQuote
