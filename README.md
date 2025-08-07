@@ -77,7 +77,8 @@ Este proyecto utiliza <strong>Vitest</strong> para realizar pruebas unitarias.
      Desarrolladora
 -  :nerd_face: [Luisa Moreno](https://github.com/LuMorenoM)
      Desarrolladora
--  :nerd_face: [Suraya Souto](https://github.com/surayac)
+-  :nerd_face: [Suraya Mattar](https://github.com/surayac)
      Desarrolladora
+
 
 
