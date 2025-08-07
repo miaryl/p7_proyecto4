@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -7,46 +8,37 @@ function Footer() {
         <p className="text-center md:text-right">
           © 2025. Todos los derechos reservados.
         </p>
-      <div className="flex gap-9">
-      <a
+        <div className="flex gap-9">
+          <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="hover:text-gray-300 transition"
+            className="hover:text-gray-300 transition text-xl"
           >
-            <img
-              src="src/assets/fb.png"
-              alt="Facebook"
-              className="w-6 h-6"
-            />
+            <FaFacebookF />
           </a>
+
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hover:text-gray-300 transition"
+            className="hover:text-gray-300 transition text-xl"
           >
-            <img
-              src="src/assets/ig.png"
-              alt="Instagram"
-              className="w-6 h-6"
-            />
+            <FaInstagram />
           </a>
+
           <a
-            href="mailto:tucorreo@ejemplo.com"
-            aria-label="Email"
-            className="hover:text-gray-300 transition"
+            href="https://wa.me/1234567890" 
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="hover:text-gray-300 transition text-xl"
           >
-            <img
-              src="src/assets/mail.png"
-              alt="Email"
-              className="w-6 h-6"
-            />
+            <FaWhatsapp />
           </a>
         </div>
-        
       </div>
     </footer>
   );
