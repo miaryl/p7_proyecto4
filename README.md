@@ -2,6 +2,16 @@
 Motíva Tu Día es una Aplicación de Página Única (SPA) donde puedes tener tu propia página para mostrar tus Frases Motivadoras Favoritas.
 ¡Puedes crear, editar, leer y también eliminar frases con total libertad! 
 
+## 📷 Capturas del Proyecto
+
+
+<img width="1877" height="889" alt="Screenshot 2025-08-07 090636" src="https://github.com/user-attachments/assets/ec1151f7-d089-4b98-9a55-5b3fcbe1f02b" />
+
+<img width="1871" height="888" alt="Screenshot 2025-08-07 090721" src="https://github.com/user-attachments/assets/ce077eb4-5266-474a-926e-22e5df30fc37" />
+
+<img width="1881" height="897" alt="Screenshot 2025-08-07 091344" src="https://github.com/user-attachments/assets/d6dc4a97-3dff-4906-993c-0d91f6bfb2f8" />
+
+
 ## Proceso de Desarrollo
 
 - Metodología ágil: **Scrum** y **Kanban**
@@ -69,3 +79,4 @@ Este proyecto utiliza <strong>Vitest</strong> para realizar pruebas unitarias.
      Desarrolladora
 -  :nerd_face: [Suraya Souto](https://github.com/surayac)
      Desarrolladora
+
